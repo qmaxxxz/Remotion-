@@ -40,11 +40,7 @@ jobs:
       - name: Render Video
         run: |
           mkdir -p out
-          npx remotion render \
-            src/index.ts \
-            "${{ github.event.inputs.composition_id || 'Video' }}" \
-            out/remotion-video.mp4 \
-            --codec h264
+          npx remotion render ./src/index.ts "${{ inputs.composition_id || 'Video' }}" ./out/remotion-video.mp4 --codec=h264
 
       - name: Upload Rendered MP4
         uses: actions/upload-artifact@v4
