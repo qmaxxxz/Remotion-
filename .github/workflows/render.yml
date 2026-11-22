@@ -1,0 +1,56 @@
+
+name: Render Remotion Video
+
+on:
+  workflow_dispatch:
+    inputs:
+      composition_id:
+        description: "Remotion Composition ID"
+        required: true
+        default: "Video"
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    name: Render MP4
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Prepare Remotion Browser
+        run: npx remotion browser ensure
+
+      - name: Render Video
+        run: |
+          mkdir -p out
+          npx remotion render \
+            src/index.ts \
+            "${{ github.event.inputs.composition_id || 'Video' }}" \
+            out/remotion-video.mp4 \
+            --codec h264
+
+      - name: Upload Rendered MP4
+        uses: actions/upload-artifact@v4
+        with:
+          name: remotion-video
+          path: out/remotion-video.mp4
+          if-no-files-found: error
+          retention-days: 7
