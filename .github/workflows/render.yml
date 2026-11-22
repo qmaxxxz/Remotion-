@@ -65,9 +65,28 @@ jobs:
         run: npx remotion browser ensure
 
       # 7. List compositions
-      - name: List Remotion Compositions
+      
+      - name: Diagnose Remotion Entry Point
+        shell: bash
         run: |
-          npx remotion compositions src/index.ts
+          echo "=== ROOT DIRECTORY ==="
+          ls -la
+
+          echo "=== ALL SOURCE FILES ==="
+          find . -maxdepth 5 -type f \
+            ! -path './node_modules/*' \
+            ! -path './.git/*' | sort
+
+          echo "=== ENTRY POINT CANDIDATES ==="
+          find . -maxdepth 5 -type f \
+            \( -name "index.ts" -o -name "index.tsx" \
+            -o -name "index.js" -o -name "index.jsx" \) \
+            ! -path './node_modules/*'
+
+          echo "=== ROOT REGISTRATION ==="
+          grep -R -n "registerRoot\|<Composition\|id=" src \
+            --include="*.ts" --include="*.tsx" \
+            --exclude-dir=node_modules || true
 
       # 8. Render MP4
       - name: Render Video
