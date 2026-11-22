@@ -36,12 +36,25 @@ jobs:
 
       - name: Prepare Remotion Browser
         run: npx remotion browser ensure
-
-      - name: Render Video
+        
+      - name: Diagnose Remotion Project
         run: |
-          mkdir -p out
-          npx remotion render ./src/index.ts "${{ inputs.composition_id || 'Video' }}" ./out/remotion-video.mp4 --codec=h264
+          echo "=== PROJECT LOCATION ==="
+          pwd
 
+          echo "=== PROJECT FILES ==="
+          find . -maxdepth 4 -type f \
+            ! -path './node_modules/*' \
+            ! -path './.git/*' | sort | head -200
+
+          echo "=== PACKAGE JSON ==="
+          cat package.json
+
+          echo "=== REMOTION ENTRY FILES ==="
+          find . -maxdepth 4 -type f \
+            \( -name "index.ts" -o -name "index.tsx" -o -name "Root.tsx" \) \
+            ! -path './node_modules/*'
+            
       - name: Upload Rendered MP4
         uses: actions/upload-artifact@v4
         with:
