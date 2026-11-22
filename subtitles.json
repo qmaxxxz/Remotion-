@@ -1,0 +1,338 @@
+[
+  {
+    "text": "In 2005, one billion people were online.",
+    "startMs": 2000,
+    "endMs": 4800,
+    "timestampMs": 3400,
+    "confidence": null
+  },
+  {
+    "text": "Today, about five and a half billion are.",
+    "startMs": 5100,
+    "endMs": 8300,
+    "timestampMs": 6700,
+    "confidence": null
+  },
+  {
+    "text": "That is two-thirds of humanity.",
+    "startMs": 8600,
+    "endMs": 10600,
+    "timestampMs": 9600,
+    "confidence": null
+  },
+  {
+    "text": "But the last billion is the hardest.",
+    "startMs": 10900,
+    "endMs": 13700,
+    "timestampMs": 12300,
+    "confidence": null
+  },
+  {
+    "text": "This is the story of the global internet, told in data.",
+    "startMs": 14000,
+    "endMs": 18400,
+    "timestampMs": 16200,
+    "confidence": null
+  },
+  {
+    "text": "Start with the headline.",
+    "startMs": 48000,
+    "endMs": 49600,
+    "timestampMs": 48800,
+    "confidence": null
+  },
+  {
+    "text": "Around 5.",
+    "startMs": 49900,
+    "endMs": 50700,
+    "timestampMs": 50300,
+    "confidence": null
+  },
+  {
+    "text": "5 billion people used the internet in 2024.",
+    "startMs": 51000,
+    "endMs": 54200,
+    "timestampMs": 52600,
+    "confidence": null
+  },
+  {
+    "text": "If two-thirds are online, roughly one in three people is still offline.",
+    "startMs": 54500,
+    "endMs": 59300,
+    "timestampMs": 56900,
+    "confidence": null
+  },
+  {
+    "text": "That is about 2.",
+    "startMs": 59600,
+    "endMs": 61200,
+    "timestampMs": 60400,
+    "confidence": null
+  },
+  {
+    "text": "6 billion people.",
+    "startMs": 61500,
+    "endMs": 62700,
+    "timestampMs": 62100,
+    "confidence": null
+  },
+  {
+    "text": "So the question is not whether the internet matters.",
+    "startMs": 63000,
+    "endMs": 66600,
+    "timestampMs": 64800,
+    "confidence": null
+  },
+  {
+    "text": "It is who gets to use it.",
+    "startMs": 66900,
+    "endMs": 69700,
+    "timestampMs": 68300,
+    "confidence": null
+  },
+  {
+    "text": "The growth curve is one of the fastest adoption stories in history.",
+    "startMs": 108000,
+    "endMs": 112800,
+    "timestampMs": 110400,
+    "confidence": null
+  },
+  {
+    "text": "In 2005, just over one billion people were online.",
+    "startMs": 113100,
+    "endMs": 116700,
+    "timestampMs": 114900,
+    "confidence": null
+  },
+  {
+    "text": "By 2015, it was over three billion.",
+    "startMs": 117000,
+    "endMs": 119800,
+    "timestampMs": 118400,
+    "confidence": null
+  },
+  {
+    "text": "And by 2024, the world crossed five and a half billion.",
+    "startMs": 120100,
+    "endMs": 124500,
+    "timestampMs": 122300,
+    "confidence": null
+  },
+  {
+    "text": "But notice the shape.",
+    "startMs": 124800,
+    "endMs": 126400,
+    "timestampMs": 125600,
+    "confidence": null
+  },
+  {
+    "text": "It is slowing.",
+    "startMs": 126700,
+    "endMs": 127900,
+    "timestampMs": 127300,
+    "confidence": null
+  },
+  {
+    "text": "The easy connections are already made.",
+    "startMs": 128200,
+    "endMs": 130600,
+    "timestampMs": 129400,
+    "confidence": null
+  },
+  {
+    "text": "The people still offline are harder to reach.",
+    "startMs": 130900,
+    "endMs": 134100,
+    "timestampMs": 132500,
+    "confidence": null
+  },
+  {
+    "text": "Break the average down by region.",
+    "startMs": 183000,
+    "endMs": 185400,
+    "timestampMs": 184200,
+    "confidence": null
+  },
+  {
+    "text": "In Europe, around 92 percent of people are online.",
+    "startMs": 185700,
+    "endMs": 189300,
+    "timestampMs": 187500,
+    "confidence": null
+  },
+  {
+    "text": "In the Americas, about 87 percent.",
+    "startMs": 189600,
+    "endMs": 192000,
+    "timestampMs": 190800,
+    "confidence": null
+  },
+  {
+    "text": "In Asia-Pacific, roughly two-thirds.",
+    "startMs": 192300,
+    "endMs": 193900,
+    "timestampMs": 193100,
+    "confidence": null
+  },
+  {
+    "text": "But in Africa, around 37 percent.",
+    "startMs": 194200,
+    "endMs": 196600,
+    "timestampMs": 195400,
+    "confidence": null
+  },
+  {
+    "text": "These gaps follow geography, income, and policy.",
+    "startMs": 196900,
+    "endMs": 199700,
+    "timestampMs": 198300,
+    "confidence": null
+  },
+  {
+    "text": "The global map of the internet is also a map of inequality.",
+    "startMs": 200000,
+    "endMs": 204800,
+    "timestampMs": 202400,
+    "confidence": null
+  },
+  {
+    "text": "For many, the first connection is a phone.",
+    "startMs": 273000,
+    "endMs": 276200,
+    "timestampMs": 274600,
+    "confidence": null
+  },
+  {
+    "text": "But coverage is not usage.",
+    "startMs": 276500,
+    "endMs": 278500,
+    "timestampMs": 277500,
+    "confidence": null
+  },
+  {
+    "text": "You can have a signal but not",
+    "startMs": 278800,
+    "endMs": 281600,
+    "timestampMs": 280200,
+    "confidence": null
+  },
+  {
+    "text": "afford a smartphone or data plan.",
+    "startMs": 281600,
+    "endMs": 284000,
+    "timestampMs": 282800,
+    "confidence": null
+  },
+  {
+    "text": "The UN target is 1GB for no",
+    "startMs": 284300,
+    "endMs": 287100,
+    "timestampMs": 285700,
+    "confidence": null
+  },
+  {
+    "text": "more than 2% of monthly income.",
+    "startMs": 287100,
+    "endMs": 289500,
+    "timestampMs": 288300,
+    "confidence": null
+  },
+  {
+    "text": "In many countries, it costs far more.",
+    "startMs": 289800,
+    "endMs": 292600,
+    "timestampMs": 291200,
+    "confidence": null
+  },
+  {
+    "text": "Speed is another divide.",
+    "startMs": 292900,
+    "endMs": 294500,
+    "timestampMs": 293700,
+    "confidence": null
+  },
+  {
+    "text": "Slow connections turn opportunities into delays.",
+    "startMs": 294800,
+    "endMs": 297200,
+    "timestampMs": 296000,
+    "confidence": null
+  },
+  {
+    "text": "Digital inclusion is not just a cable.",
+    "startMs": 297500,
+    "endMs": 300300,
+    "timestampMs": 298900,
+    "confidence": null
+  },
+  {
+    "text": "It is a system.",
+    "startMs": 300600,
+    "endMs": 302200,
+    "timestampMs": 301400,
+    "confidence": null
+  },
+  {
+    "text": "The internet reached five and a half",
+    "startMs": 394000,
+    "endMs": 396800,
+    "timestampMs": 395400,
+    "confidence": null
+  },
+  {
+    "text": "billion people faster than almost any technology.",
+    "startMs": 396800,
+    "endMs": 399600,
+    "timestampMs": 398200,
+    "confidence": null
+  },
+  {
+    "text": "But the next billion will not be",
+    "startMs": 399900,
+    "endMs": 402700,
+    "timestampMs": 401300,
+    "confidence": null
+  },
+  {
+    "text": "won by repeating the same playbook.",
+    "startMs": 402700,
+    "endMs": 405100,
+    "timestampMs": 403900,
+    "confidence": null
+  },
+  {
+    "text": "They will be won by solving the hard",
+    "startMs": 405400,
+    "endMs": 408600,
+    "timestampMs": 407000,
+    "confidence": null
+  },
+  {
+    "text": "problems: infrastructure, affordability, devices, skills, and trust.",
+    "startMs": 408600,
+    "endMs": 411400,
+    "timestampMs": 410000,
+    "confidence": null
+  },
+  {
+    "text": "The global internet is no longer a story about technology.",
+    "startMs": 411700,
+    "endMs": 415700,
+    "timestampMs": 413700,
+    "confidence": null
+  },
+  {
+    "text": "It is a story about who gets to participate.",
+    "startMs": 416000,
+    "endMs": 419600,
+    "timestampMs": 417800,
+    "confidence": null
+  },
+  {
+    "text": "And that is a choice we are still making.",
+    "startMs": 419900,
+    "endMs": 423500,
+    "timestampMs": 421700,
+    "confidence": null
+  }
+]

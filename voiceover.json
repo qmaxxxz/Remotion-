@@ -1,0 +1,11 @@
+{
+  "wpm": 150,
+  "scenes": [
+    {"id": "hook", "offsetSeconds": 2, "text": "In 2005, one billion people were online. Today, about five and a half billion are. That is two-thirds of humanity. But the last billion is the hardest. This is the story of the global internet, told in data."},
+    {"id": "global", "offsetSeconds": 3, "text": "Start with the headline. Around 5.5 billion people used the internet in 2024. If two-thirds are online, roughly one in three people is still offline. That is about 2.6 billion people. So the question is not whether the internet matters. It is who gets to use it."},
+    {"id": "growth", "offsetSeconds": 3, "text": "The growth curve is one of the fastest adoption stories in history. In 2005, just over one billion people were online. By 2015, it was over three billion. And by 2024, the world crossed five and a half billion. But notice the shape. It is slowing. The easy connections are already made. The people still offline are harder to reach."},
+    {"id": "regional", "offsetSeconds": 3, "text": "Break the average down by region. In Europe, around 92 percent of people are online. In the Americas, about 87 percent. In Asia-Pacific, roughly two-thirds. But in Africa, around 37 percent. These gaps follow geography, income, and policy. The global map of the internet is also a map of inequality."},
+    {"id": "barriers", "offsetSeconds": 3, "text": "For many, the first connection is a phone. But coverage is not usage. You can have a signal but not afford a smartphone or data plan. The UN target is 1GB for no more than 2% of monthly income. In many countries, it costs far more. Speed is another divide. Slow connections turn opportunities into delays. Digital inclusion is not just a cable. It is a system."},
+    {"id": "next", "offsetSeconds": 4, "text": "The internet reached five and a half billion people faster than almost any technology. But the next billion will not be won by repeating the same playbook. They will be won by solving the hard problems: infrastructure, affordability, devices, skills, and trust. The global internet is no longer a story about technology. It is a story about who gets to participate. And that is a choice we are still making."}
+  ]
+}
