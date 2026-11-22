@@ -60,8 +60,9 @@ jobs:
         run: npm install
 
       # 5. Pastikan Remotion CLI tersedia
-      - name: Check Remotion
-        run: npx remotion versions
+            - name: Check Remotion Dependencies
+        run: |
+          npm ls remotion @remotion/cli @remotion/captions @remotion/google-fonts
 
       # 6. Siapkan browser Remotion
       - name: Prepare Remotion Browser
