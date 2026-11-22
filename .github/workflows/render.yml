@@ -8,6 +8,7 @@ on:
         description: "Remotion Composition ID"
         required: true
         default: "Video"
+        type: string
 
   push:
     branches:
@@ -23,21 +24,19 @@ jobs:
     timeout-minutes: 60
 
     steps:
+      # 1. Ambil kode dari repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # 2. Siapkan Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Prepare Remotion Browser
-        run: npx remotion browser ensure
-        
-      - name: Diagnose Remotion Project
+      # 3. Periksa struktur proyek
+      - name: Diagnose Project
+        shell: bash
         run: |
           echo "=== PROJECT LOCATION ==="
           pwd
@@ -52,9 +51,65 @@ jobs:
 
           echo "=== REMOTION ENTRY FILES ==="
           find . -maxdepth 4 -type f \
-            \( -name "index.ts" -o -name "index.tsx" -o -name "Root.tsx" \) \
+            \( -name "index.ts" -o -name "index.tsx" \
+            -o -name "index.js" -o -name "Root.tsx" \) \
             ! -path './node_modules/*'
-            
+
+      # 4. Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # 5. Pastikan Remotion CLI tersedia
+      - name: Check Remotion
+        run: npx remotion versions
+
+      # 6. Siapkan browser Remotion
+      - name: Prepare Remotion Browser
+        run: npx remotion browser ensure
+
+      # 7. Temukan Composition ID
+      - name: List Remotion Compositions
+        shell: bash
+        run: |
+          echo "=== AVAILABLE COMPOSITIONS ==="
+          npx remotion compositions src/index.ts
+
+      # 8. Render video
+      - name: Render Video
+        shell: bash
+        env:
+          COMPOSITION_ID: ${{ github.event.inputs.composition_id || 'Video' }}
+        run: |
+          mkdir -p out
+
+          echo "=== SELECTED COMPOSITION ==="
+          echo "$COMPOSITION_ID"
+
+          echo "=== STARTING RENDER ==="
+
+          npx remotion render \
+            src/index.ts \
+            "$COMPOSITION_ID" \
+            out/remotion-video.mp4 \
+            --codec=h264 \
+            --concurrency=1
+
+      # 9. Periksa hasil render
+      - name: Verify Rendered Video
+        shell: bash
+        run: |
+          echo "=== CHECK OUTPUT ==="
+
+          if [ ! -f out/remotion-video.mp4 ]; then
+            echo "ERROR: MP4 was not created"
+            exit 1
+          fi
+
+          ls -lh out/remotion-video.mp4
+
+          npx remotion ffprobe out/remotion-video.mp4
+
+      # 10. Upload MP4
       - name: Upload Rendered MP4
         uses: actions/upload-artifact@v4
         with:
