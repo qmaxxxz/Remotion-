@@ -24,32 +24,27 @@ jobs:
     timeout-minutes: 60
 
     steps:
-      # 1. Ambil kode dari repository
+      # 1. Checkout repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. Siapkan Node.js
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      # 3. Periksa struktur proyek
+      # 3. Check project files
       - name: Diagnose Project
         shell: bash
         run: |
           echo "=== PROJECT LOCATION ==="
           pwd
 
-          echo "=== PROJECT FILES ==="
-          find . -maxdepth 4 -type f \
-            ! -path './node_modules/*' \
-            ! -path './.git/*' | sort | head -200
-
           echo "=== PACKAGE JSON ==="
           cat package.json
 
-          echo "=== REMOTION ENTRY FILES ==="
+          echo "=== PROJECT ENTRY FILES ==="
           find . -maxdepth 4 -type f \
             \( -name "index.ts" -o -name "index.tsx" \
             -o -name "index.js" -o -name "Root.tsx" \) \
@@ -59,23 +54,22 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # 5. Pastikan Remotion CLI tersedia
-            - name: Check Remotion Dependencies
+      # 5. Verify dependencies
+      - name: Check Remotion Dependencies
         run: |
-          npm ls remotion @remotion/cli @remotion/captions @remotion/google-fonts
+          npm ls remotion @remotion/cli \
+            @remotion/captions @remotion/google-fonts
 
-      # 6. Siapkan browser Remotion
+      # 6. Install Remotion browser
       - name: Prepare Remotion Browser
         run: npx remotion browser ensure
 
-      # 7. Temukan Composition ID
+      # 7. List compositions
       - name: List Remotion Compositions
-        shell: bash
         run: |
-          echo "=== AVAILABLE COMPOSITIONS ==="
           npx remotion compositions src/index.ts
 
-      # 8. Render video
+      # 8. Render MP4
       - name: Render Video
         shell: bash
         env:
@@ -83,10 +77,8 @@ jobs:
         run: |
           mkdir -p out
 
-          echo "=== SELECTED COMPOSITION ==="
+          echo "=== COMPOSITION ID ==="
           echo "$COMPOSITION_ID"
-
-          echo "=== STARTING RENDER ==="
 
           npx remotion render \
             src/index.ts \
@@ -95,22 +87,19 @@ jobs:
             --codec=h264 \
             --concurrency=1
 
-      # 9. Periksa hasil render
+      # 9. Verify output
       - name: Verify Rendered Video
         shell: bash
         run: |
-          echo "=== CHECK OUTPUT ==="
-
-          if [ ! -f out/remotion-video.mp4 ]; then
-            echo "ERROR: MP4 was not created"
+          if [ ! -s out/remotion-video.mp4 ]; then
+            echo "ERROR: MP4 not found or empty"
             exit 1
           fi
 
+          echo "=== RENDER SUCCESS ==="
           ls -lh out/remotion-video.mp4
 
-          npx remotion ffprobe out/remotion-video.mp4
-
-      # 10. Upload MP4
+      # 10. Upload artifact
       - name: Upload Rendered MP4
         uses: actions/upload-artifact@v4
         with:
